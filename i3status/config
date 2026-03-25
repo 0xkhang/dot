@@ -1,0 +1,36 @@
+general {
+    colors = true
+    interval = 5
+}
+
+order += "ipv6"
+order += "ethernet _first_"
+order += "wireless _first_"
+order += "battery 0"
+order += "disk /"
+order += "memory"
+order += "volume master"
+order += "time"
+
+ethernet _first_ {
+    format_up = "E: %ip"
+    format_down = "E: down"
+}
+
+wireless _first_ {
+    format_up = "W:(%quality) %ip"
+    format_down = "W: down"
+}
+
+battery 0 {
+    format = "%status %percentage"
+    format_down = "No battery"
+}
+
+volume master {
+    format = "♪ %volume"
+}
+
+time {
+    format = "%Y-%m-%d %H:%M"
+}
