@@ -36,11 +36,13 @@ return {
 					return vim.fn.getcwd()
 				end,
 				pickers = {
+          previewer = false,
 					colorscheme = {
-						enable_preview = true,
+						enable_preview = false,
 					},
 				},
 				defaults = {
+          previewer = false,
 					path_display = { "smart" },
 					layout_config = {
 						horizontal = {
