@@ -7,7 +7,7 @@ set numberwidth=5
 set background=dark
 
 " Clipboard
-set clipboard+=unnamedplus
+set clipboard=unnamedplus
 
 " Line numbers
 set number
@@ -73,8 +73,6 @@ noremap <C-l> <C-w>l
 noremap <leader>ef :Ex<CR>
 
 call plug#begin()
-Plug 'morhetz/gruvbox'
+" Plug 'morhetz/gruvbox'
 Plug 'tpope/vim-sensible'
 call plug#end()
-
-colorscheme gruvbox
