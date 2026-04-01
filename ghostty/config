@@ -1,0 +1,14 @@
+cursor-style = block
+cursor-style-blink = true
+cursor-text = #000000
+mouse-hide-while-typing
+window-decoration = server
+shell-integration = none
+font-family = Iosevka
+font-style = Regular
+font-size = 15
+font-thicken = false 
+font-feature = -calt -dlig -liga
+theme = gruber-darker
+term=xterm-256color
+x11-instance-name=ghostty
