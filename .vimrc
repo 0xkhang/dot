@@ -4,6 +4,8 @@ set softtabstop=4
 set shiftwidth=4
 set numberwidth=5
 
+set statusline="%t"
+
 set background=dark
 
 " Clipboard
