@@ -36,13 +36,11 @@ return {
 					return vim.fn.getcwd()
 				end,
 				pickers = {
-          previewer = false,
 					colorscheme = {
 						enable_preview = false,
 					},
 				},
 				defaults = {
-          previewer = false,
 					path_display = { "smart" },
 					layout_config = {
 						horizontal = {
@@ -82,7 +80,10 @@ return {
 			end
 
 			keymap.set("n", "<leader>sf", function()
-				require("telescope.builtin").find_files({ hidden = true, cwd = get_project_root() })
+				require("telescope.builtin").find_files({ 
+                    hidden = true, 
+                    cwd = get_project_root() 
+                })
 			end, { desc = "Find files from project root" })
 			keymap.set("n", "<leader>sr", "<cmd>Telescope oldfiles<cr>")
 			keymap.set("n", "<leader>ss", function()
