@@ -12,3 +12,4 @@ font-feature = -calt -dlig -liga
 theme = gruber-darker
 term=xterm-256color
 x11-instance-name=ghostty
+confirm-close-surface = false
