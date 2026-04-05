@@ -24,7 +24,7 @@ fi
 PS1='[%n@%F{red}%m%f %1~]$ '
 
 # Plugins
-plugins+=(git zsh-autosuggestions zsh-syntax-highlighting web-search tmux )
+plugins+=(git zsh-autosuggestions zsh-syntax-highlighting web-search tmux)
 
 eval "$(fzf --zsh)"
 
@@ -42,6 +42,13 @@ alias night="redshift -O 4500K"
 alias day="redshift -x"
 alias code="dbus-launch flatpak run com.visualstudio.code"
 alias lg="lazygit"
+alias open="xdg-open"
 
 # Compilation flags
 export ARCHFLAGS="-arch $(uname -m)"
+
+# opencode
+export PATH=/home/dexter/.opencode/bin:$PATH
+
+# go
+export PATH="$PATH:$HOME/go/bin"
