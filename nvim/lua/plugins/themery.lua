@@ -116,9 +116,9 @@ return {
   {
     "blazkowolf/gruber-darker.nvim",
     opts = {
-      bold = false,
+      bold = true,
       invert = {
-        signs = false,
+        signs = true,
         tabline = false,
         visual = false,
       },
