@@ -21,7 +21,7 @@ else
 fi
 
 
-PS1='[%n@%F{red}%m%f %1~]$ '
+PS1='[%n@%F{green}%m%f %1~]$ '
 
 # Plugins
 plugins+=(git zsh-autosuggestions zsh-syntax-highlighting web-search tmux)
@@ -38,9 +38,9 @@ alias ll='ls -l'
 alias nvi="nvim"
 alias f="ufetch"
 alias ff="fastfetch"
+alias of="onefetch"
 alias night="redshift -O 4500K"
 alias day="redshift -x"
-alias code="dbus-launch flatpak run com.visualstudio.code"
 alias lg="lazygit"
 alias open="xdg-open"
 
