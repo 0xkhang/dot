@@ -10,15 +10,15 @@ decorations = "Full"
 startup_mode = "Maximized"
 dynamic_title = false
 title = "not a simple terminal emulator"
-opacity = 0.85
+opacity = 1.89
 
 [font]
-normal = {family = "DejaVuSansM Nerd Font", style = "Regular"}
-size = 15
+normal = {family = "Iosevka", style = "Regular"}
+size = 10
 
 [colors]
 # primary.background = "#000000"
-cursor = { text = "#000000", cursor = "#ffffff" }
+cursor = { text = "#000000", cursor = "#ffdd33" }
 
 [selection]
 save_to_clipboard = false
