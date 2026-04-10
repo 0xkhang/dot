@@ -28,3 +28,5 @@
 
 (add-to-list 'default-frame-alist
              '(font . "Iosevka-10"))
+
+(setq make-backup-files nil)
