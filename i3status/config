@@ -30,7 +30,6 @@ ipv6 {
 }
 
 wireless _first_ {
-        # format_up = "W: (%quality at %essid) %ip"
         format_up = "W: (%quality) Leaked IP: %ip"
         format_down = "W: down"
 }
@@ -49,7 +48,7 @@ cpu_temperature 0 {
 }
 
 volume master {
-    format = "♪ %volume"
+    format = "♫ %volume"
 }
 
 time {
