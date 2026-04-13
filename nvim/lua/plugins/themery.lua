@@ -108,7 +108,7 @@ return {
           },
         },
 
-        vim.keymap.set("n", "<leader>cc", ":Themery<CR>"),
+        vim.keymap.set("n", "<leader>cl", ":Themery<CR>"),
       })
     end,
   },
