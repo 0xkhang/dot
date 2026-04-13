@@ -5,7 +5,7 @@ return {
 			formatters = {
 				clang_format = {
 					args = {
-						"--style={BasedOnStyle: Google, AlwaysBreakAfterReturnType: All, AllowShortIfStatementsOnASingleLine: false, AlignAfterOpenBracket: Align, BreakBeforeBraces: Stroustrup, ColumnLimit: 95, DerivePointerAlignment: false, IndentWidth: 4, Language: Cpp, PointerAlignment: Right, ReflowComments: true, SpaceBeforeParens: ControlStatements, SpacesInParentheses: false, TabWidth: 4, UseTab: Never, SortIncludes: false}",
+						"--style={BasedOnStyle: LLVM, IndentWidth: 4, UseTab: Never}",
 					},
 				},
 			},
