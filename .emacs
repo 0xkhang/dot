@@ -30,3 +30,11 @@
              '(font . "Iosevka-10"))
 
 (setq make-backup-files nil)
+
+;; Increase mode line height (e.g., make it 2x taller)
+(setq mode-line-height 2)
+
+;; Or set specific pixel height (example: 40 pixels)
+(setq mode-line-format (copy-tree mode-line-format))
+(set-face-attribute 'mode-line nil :height 140)  ; 140% of default
+(set-face-attribute 'mode-line-inactive nil :height 140)
