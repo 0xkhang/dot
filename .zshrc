@@ -21,7 +21,7 @@ else
 fi
 
 
-PS1='[%n@%F{green}%m%f %1~]$ '
+PS1='[%n@%F{red}%m%f %1~]$ '
 
 # Plugins
 plugins+=(git zsh-autosuggestions zsh-syntax-highlighting web-search tmux)
