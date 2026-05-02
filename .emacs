@@ -1,15 +1,49 @@
+;; UI Settings
 (tool-bar-mode 0)
 (scroll-bar-mode 0)
 (menu-bar-mode 0)
 (global-display-line-numbers-mode 1)
 (setq display-line-numbers-type 'relative)
 
-(add-to-list 'load-path "~/softwares/emacs-plugins/evil")
-(require 'evil)
-(evil-mode 1)
+;; Package Management
+(require 'package)
+(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+(package-initialize)
 
-(add-to-list 'custom-theme-load-path
-             "~/softwares/emacs-plugins/gruber-darker-theme")
+;; Ensure use-package is available
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+(require 'use-package)
+(setq use-package-always-ensure t)
+
+;; Evil - No custom config, just defaults
+(use-package evil
+  :ensure t
+  :config
+  (evil-mode 1))
+
+
+(setq evil-insert-state-cursor 'box)
+
+;; Magit
+(use-package magit
+  :ensure t
+  :bind ("C-x g" . magit-status))
+
+
+;; Gruber Darker Theme
+(use-package gruber-darker-theme
+  :ensure t
+  :config
+  (load-theme 'gruber-darker t))
+
+;; Font Settings
+(add-to-list 'default-frame-alist '(font . "Menlo-10"))
+
+;; Disable backup files
+(setq make-backup-files nil)
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -18,23 +52,14 @@
  '(custom-enabled-themes '(gruber-darker))
  '(custom-safe-themes
    '("e27c9668d7eddf75373fa6b07475ae2d6892185f07ebed037eedf783318761d7"
-     default)))
+     default))
+ '(package-selected-packages
+   '(doom-modeline evil evil-collection gruber-darker-theme helm magit
+		   powerline use-package)))
+
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
-
-(add-to-list 'default-frame-alist
-             '(font . "Iosevka-10"))
-
-(setq make-backup-files nil)
-
-;; Increase mode line height (e.g., make it 2x taller)
-(setq mode-line-height 2)
-
-;; Or set specific pixel height (example: 40 pixels)
-(setq mode-line-format (copy-tree mode-line-format))
-(set-face-attribute 'mode-line nil :height 140)  ; 140% of default
-(set-face-attribute 'mode-line-inactive nil :height 140)
