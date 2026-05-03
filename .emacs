@@ -1,49 +1,84 @@
-;; UI Settings
-(tool-bar-mode 0)
-(scroll-bar-mode 0)
-(menu-bar-mode 0)
-(global-display-line-numbers-mode 1)
-(setq display-line-numbers-type 'relative)
+(setq evil-want-keybinding nil)   ; ← THIS IS REQUIRED
 
-;; Package Management
+;; UI settings
+(tool-bar-mode -1)
+(menu-bar-mode -1)
+(scroll-bar-mode -1)
+(column-number-mode 1)
+(show-paren-mode 1)
+(setq mac-command-modifier 'meta)
+(setq ns-use-proxy-icon nil)
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
 (require 'package)
-(add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+ 
+(add-to-list 'package-archives '("org" . "http://orgmode.org/elpa/"))
+(add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
+(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+ 
 (package-initialize)
 
-;; Ensure use-package is available
-(unless (package-installed-p 'use-package)
-  (package-refresh-contents)
-  (package-install 'use-package))
-(require 'use-package)
-(setq use-package-always-ensure t)
+;; Refresh package contents if needed
+(unless package-archive-contents
+  (package-refresh-contents))
 
-;; Evil - No custom config, just defaults
+;; Install use-package if not present
+(unless (package-installed-p 'use-package)
+  (package-install 'use-package))
+
+(require 'use-package)
+
+;; Install packages
+(unless (package-installed-p 'magit)
+  (package-install 'magit))
+
+(unless (package-installed-p 'gruber-darker-theme)
+  (package-install 'gruber-darker-theme))
+
+
+;; Evil mode
 (use-package evil
   :ensure t
   :config
-  (evil-mode 1))
+  (evil-mode 1)
+  (setq evil-insert-state-cursor 'box))
 
-
-(setq evil-insert-state-cursor 'box)
+(use-package evil-collection
+  :after evil
+  :ensure t
+  :config
+  (evil-collection-init))
 
 ;; Magit
 (use-package magit
-  :ensure t
-  :bind ("C-x g" . magit-status))
+  :ensure t)
+
+;; Theme
+(load-theme 'gruber-darker t)
+
+;; Line numbers
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode 1)
+
+;; Frame size
+(add-to-list 'default-frame-alist '(width . 100))
+(add-to-list 'default-frame-alist '(height . 50))
+
+(setq ring-bell-function 'ignore)
+
+(unless (package-installed-p 'nyan-mode)
+  (package-install 'nyan-mode))
+(require 'nyan-mode)
+(nyan-mode 1)
+
+(require 'ido)
+(ido-mode t)
+(ido-everywhere t)
+(setq ido-enable-flex-matching t) ; Enables flexible, fuzzy matching [2]
 
 
-;; Gruber Darker Theme
-(use-package gruber-darker-theme
-  :ensure t
-  :config
-  (load-theme 'gruber-darker t))
-
-;; Font Settings
-(add-to-list 'default-frame-alist '(font . "Menlo-10"))
-
-;; Disable backup files
-(setq make-backup-files nil)
-
+(set-face-attribute 'mode-line nil :height 150)
+(set-face-attribute 'default nil :height 150)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -55,11 +90,12 @@
      default))
  '(package-selected-packages
    '(doom-modeline evil evil-collection gruber-darker-theme helm magit
-		   powerline use-package)))
-
+		   nyan-mode powerline use-package)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  )
+
+(setq make-backup-files nil)
