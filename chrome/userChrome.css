@@ -1,0 +1,310 @@
+/* imports the user facing variables */
+@import url(userVariables.css);
+
+/* /* TAB HEIGHT MANAGEMENT */ */
+/* :root { */
+/*   --tab-min-height: 38px !important; /* Change this value to adjust tab height (default ~32px) */ */
+/* } */
+/**/
+/* #tabbrowser-tabs { */
+/*   --tab-min-height: var(--tab-min-height) !important; */
+/* } */
+/**/
+/* .tab-stack, */
+/* .tab-background, */
+/* .tab-content { */
+/*   min-height: var(--tab-min-height) !important; */
+/*   height: var(--tab-min-height) !important; */
+/* } */
+/**/
+/* /* Optional: Adjust tab line height for container tabs */ */
+/* :root { */
+/*   --container-stripe-height: 3px !important; /* Adjust container tab stripe thickness */ */
+/* } */
+
+/* CUSTOM ACCENT COLORS -------------------------------------------------------------------------------------- */
+
+:root {
+  --lwt-toolbarbutton-icon-fill-attention: var(--custom-accent-color, #0a84ff) !important;
+  --toolbarbutton-icon-fill-attention: var(--custom-accent-color, #0a84ff) !important;
+  --button-primary-bgcolor: var(--custom-accent-color, #0a84ff) !important;
+  --button-primary-hover-bgcolor: color-mix(in srgb, white 50%, var(--custom-accent-color, #0a84ff)) !important;
+  --button-primary-active-bgcolor: color-mix(in srgb, white 65%, var(--custom-accent-color, #0a84ff)) !important;
+  --buttons-primary-button-bgcolor: var(--custom-accent-color, #0a84ff) !important;
+  --buttons-primary-button-hover-bgcolor: color-mix(in srgb, white 50%, var(--custom-accent-color, #0a84ff)) !important;
+  --buttons-primary-button-active-bgcolor: color-mix(in srgb, white 65%, var(--custom-accent-color, #0a84ff)) !important;
+  --button-background-color-primary: var(--custom-accent-color, #0a84ff) !important;
+  --button-background-color-primary-hover: color-mix(in srgb, white 50%, var(--custom-accent-color, #0a84ff)) !important;
+  --button-background-color-primary-active: color-mix(in srgb, white 65%, var(--custom-accent-color, #0a84ff)) !important;
+  --brand-color-accent: var(--custom-accent-color, #0a84ff) !important;
+  --brand-color-accent-hover: color-mix(in srgb, white 50%, var(--custom-accent-color, #0a84ff)) !important;
+  --brand-color-accent-active: var(--custom-accent-color, #0a84ff) !important;
+  --color-accent-primary: var(--custom-accent-color, #0a84ff) !important;
+  --color-accent-primary-hover: color-mix(in srgb, white 50%, var(--custom-accent-color, #0a84ff)) !important;
+  --color-accent-primary-pressed: color-mix(in srgb, white 65%, var(--custom-accent-color, #0a84ff)) !important;
+  --tab-attention-icon-color: var(--custom-accent-color, #0a84ff) !important;
+  --checkbox-checked-bgcolor: var(--custom-accent-color, #0a84ff) !important;
+  --checkbox-checked-hover-bgcolor: color-mix(in srgb, white 50%, var(--custom-accent-color, #0a84ff)) !important;
+  --checkbox-checked-active-bgcolor: color-mix(in srgb, white 65%, var(--custom-accent-color, #0a84ff)) !important;
+  --lwt-brighttext-url-color: var(--custom-accent-color, #0a84ff) !important;
+  --lwt-popup-brighttext-url-color: var(--custom-accent-color, #0a84ff) !important;
+  --focus-outline-color: var(--custom-accent-color, #0a84ff) !important;
+  --toolbar-field-focus-border-color: var(--custom-accent-color, #0a84ff) !important;
+  --link-color: var(--custom-accent-color, #0a84ff) !important;
+  /*Star Highlight & Download Finished*/
+  --lwt-toolbarbutton-icon-fill-attention: var(--custom-accent-color, #0a84ff) !important;
+  --lwt-toolbar-field-icon-fill-attention: var(--custom-accent-color, #0a84ff) !important;
+}
+
+.urlbarView-url,
+.popup-notification-learnmore-link.text-link {
+  color: var(--custom-accent-color, #0a84ff) !important;
+}
+
+/* colors various popup windows (e.g. edit bookmarks, close window menus) */
+@-moz-document regexp("^(about:|chrome:|moz-extension:).*") {
+
+  html:not([role="dialog"]),
+  html:not([role="dialog"]) *,
+  html:not([role="dialog"]) body.activity-stream,
+  window:not([chromehidden]),
+  window:not([chromehidden])>dialog {
+    --in-content-primary-button-background: var(--custom-accent-color, #0a84ff) !important;
+    --in-content-primary-button-background-hover: color-mix(in srgb, white 50%, var(--custom-accent-color, #0a84ff)) !important;
+    --in-content-primary-button-background-active: color-mix(in srgb, white 65%, var(--custom-accent-color, #0a84ff)) !important;
+  }
+}
+
+/* color report broken side link */
+#report-broken-site-popup-send-more-info-link {
+  color: var(--custom-accent-color, #0a84ff) !important;
+}
+
+/* color the update/info dot in app menu */
+:root {
+  --panel-banner-item-info-icon-bgcolor: var(--custom-accent-color, #0a84ff) !important;
+  --panel-banner-item-update-supported-bgcolor: var(--custom-accent-color, #0a84ff) !important;
+}
+
+
+/* color the left strip in notification banners */
+.infobar::before {
+  background-image: linear-gradient(var(--custom-accent-color, #0a84ff), var(--custom-accent-color, #0a84ff)) !important;
+}
+
+
+/* color the password autofill highlight color on click */
+.autocomplete-richlistitem {
+  &[selected] {
+    background-color: color-mix(in srgb, white 15%, var(--custom-accent-color, #0a84ff)) !important;
+  }
+}
+
+/* color the "manage themes" link on the customize page */
+#customization-lwtheme-link.text-link {
+  color: var(--custom-accent-color, #0a84ff) !important;
+}
+
+/* replace the mozilla purple to yellow gradient in appmenu */
+:root:not(:-moz-lwtheme),
+:root[lwt-default-theme-in-dark-mode],
+:root[style*="--lwt-accent-color: rgb(240, 240, 244); --lwt-text-color: rgba(21, 20, 26);"],
+:root[style*="--lwt-accent-color: rgb(28, 27, 34); --lwt-text-color: rgba(251, 251, 254);"] {
+  --panel-separator-zap-gradient: linear-gradient(var(--custom-accent-color, #0a84ff), var(--custom-accent-color, #0a84ff)) !important;
+}
+
+/* can be manually overridden by pref */
+@media (-moz-bool-pref: "browser.appmenugradient.overwrite") {
+  :root {
+    --panel-separator-zap-gradient: linear-gradient(var(--custom-accent-color, #0a84ff), var(--custom-accent-color, #0a84ff)) !important;
+  }
+}
+
+
+/* TITLE BAR ----------------------------------------------------------------------------------------------- */
+
+@media (-moz-gtk-csd-available) {
+  @media (-moz-bool-pref: "browser.windowcontrolbuttons.overwrite") {
+    .titlebar-button:-moz-lwtheme {
+      appearance: auto !important;
+    }
+
+    .titlebar-min:-moz-lwtheme,
+    .titlebar-max:-moz-lwtheme,
+    .titlebar-restore:-moz-lwtheme,
+    .titlebar-close:-moz-lwtheme {
+      list-style-image: none !important;
+    }
+
+    .titlebar-button:-moz-lwtheme:hover,
+    .titlebar-button:-moz-lwtheme:hover:active {
+      background-color: unset !important;
+      color: unset !important;
+    }
+  }
+}
+
+/* remove window corner rounding in gtk */
+:root[tabsintitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) #navigator-toolbox:-moz-lwtheme,
+:root[tabsintitlebar][sizemode="normal"]:not([gtktiledwindow="true"]) ::backdrop {
+  border-top-left-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+}
+
+
+/* TAB BAR ------------------------------------------------------------------------------------------------- */
+
+#tabbrowser-tabs {
+  min-height: 0 !important;
+}
+
+/* Reduce left spacer on tab bar */
+@supports (not (-moz-osx-font-smoothing: auto)) {
+  @media not (-moz-bool-pref:"browser.lefttabspacer.enable") {
+    .titlebar-spacer[type="pre-tabs"] {
+      display: none !important;
+    }
+  }
+}
+
+/* Tab styling */
+.tab-background {
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.tab-content,
+.tab-stack {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Accent color strip on active tab */
+.tab-background:is([selected], [multiselected]) {
+  border: 0 !important;
+  outline: none !important;
+}
+
+/* Container tabs handling */
+tab[class*="identity-color"] {
+  background-image: linear-gradient(var(--identity-tab-color, white), var(--identity-tab-color, white));
+  background-size: 75% var(--container-stripe-height, 1px);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  border: 0 !important;
+  outline: none !important;
+}
+
+tab[class*="identity-color"][selected="true"]>.tab-stack>.tab-background>.tab-context-line {
+  height: 0 !important;
+}
+
+tab[class*="identity-color"][selected="true"]>.tab-stack>.tab-background:is([selected], [multiselected]) {
+  background-image: linear-gradient(var(--identity-tab-color, white), var(--identity-tab-color, white));
+  background-size: 75% var(--container-stripe-height, 1px);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+}
+
+@media (-moz-bool-pref:"browser.tabcontextline.match_container_color") {
+  tab[class*="identity-color"][selected="true"]>.tab-stack>.tab-background:is([selected], [multiselected]) {
+    box-shadow: inset 0 2px var(--identity-tab-color, white) !important;
+  }
+}
+
+.tabbrowser-tab[selected="true"] {
+  z-index: 0 !important;
+}
+
+.tabbrowser-tab {
+  padding-inline: 0 !important;
+}
+
+/* === VERTICAL LINES BETWEEN TABS REMOVED === */
+.tab-stack::before,
+.tab-stack::after {
+  display: none !important;
+}
+
+/* NAV BAR ---------------------------------------------------------------------------------------------------- */
+
+:root {
+  --arrowpanel-menuitem-padding: var(--custom-menuitem-padding-vertical, 6px) var(--custom-menuitem-padding-horizontal, 8px) !important;
+  --arrowpanel-menuitem-margin: 0 var(--custom-menuitem-margin, 4px) !important;
+  --panel-subview-body-padding: var(--custom-menuitem-margin, 4px) 0 !important;
+
+  --toolbarbutton-border-radius: 0 !important;
+  --arrowpanel-menuitem-border-radius: 0 !important;
+  --arrowpanel-border-radius: 0 !important;
+  --tab-border-radius: 0 !important;
+  --subviewbutton-border-radius: 0 !important;
+}
+
+@media not (-moz-bool-pref:"browser.syncavatar.round") {
+  #fxa-avatar-image {
+    border-radius: 0 !important;
+  }
+}
+
+#fxa-avatar-image {
+  transform: scale(var(--sync-avatar-scale)) !important;
+}
+
+@media (-moz-bool-pref:"browser.unifiedextensions.hide") {
+  #unified-extensions-button {
+    display: none
+  }
+}
+
+@media (-moz-bool-pref:"browser.extensionsdot.hide") {
+  #unified-extensions-button[attention]>.toolbarbutton-icon {
+    background-image: None !important;
+  }
+}
+
+/* SUB MENUS & MISC --------------------------------------------------------------------------------------------- */
+
+.panel-header {
+  padding: var(--custom-menuitem-margin, 4px) !important;
+  padding-bottom: 0 !important;
+}
+
+.subviewbutton-back {
+  margin: 0 0 !important;
+}
+
+/* Remove rounded corners everywhere */
+.menupopup-arrowscrollbox,
+.panel-arrowcontainer,
+.panel-arrowbox,
+.panel-arrowscrollbox,
+menupopup,
+menupopup menuitem,
+menupopup menu,
+panel,
+menulist,
+.dialogBox,
+button,
+.checkbox-check,
+#checkbox,
+select,
+:is(panel, menupopup)::part(content) {
+  border-radius: 0 !important;
+}
+
+:root {
+  --border-radius-small: 0 !important;
+  --border-radius-medium: 0 !important;
+  --border-radius-large: 0 !important;
+}
+
+/* THUNDERBIRD SPECIFIC */
+:root {
+  --tabline-color: var(--custom-accent-color, #0a84ff) !important;
+}
+
+.progressmeter-statusbar,
+.progressmeter-statusbar:not([value="0"])::-moz-progress-bar {
+  border-radius: 0 !important;
+}
