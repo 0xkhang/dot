@@ -1,4 +1,5 @@
 (setq evil-want-keybinding nil)   ; ← THIS IS REQUIRED
+(add-to-list 'ido-read-file-name-non-ido 'dired-create-directory)
 
 ;; UI settings
 (tool-bar-mode -1)
