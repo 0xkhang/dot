@@ -17,6 +17,7 @@ set $right l
 set $term ghostty
 # Your preferred application launcher
 set $menu wmenu-run
+font pango:Iosevka Medium 11 
 
 ### Output configuration
 #
@@ -59,6 +60,10 @@ output * bg /home/levi/wallpapers/vagabond.png fill
 #
 # You can also configure each device individually.
 # Read `man 5 sway-input` for more information about this section.
+
+input type:touchpad {
+  events disabled
+}
 
 input * {
     xkb_layout us
@@ -223,18 +228,27 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
+# bar {
+#     position bottom
+#
+#     # When the status_command prints a new line to stdout, swaybar updates.
+#     # The default just shows the current date and time.
+#     status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+#
+#     # colors {
+#     #     statusline #ffffff
+#     #     background #323232
+#     #     inactive_workspace #32323200 #32323200 #5c5c5c
+#     # }
+# }
+
 bar {
-    position top
-
-    # When the status_command prints a new line to stdout, swaybar updates.
-    # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
-
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
+    position bottom
+    status_command i3status
 }
+
+focus_wrapping no
+focus_follows_mouse no
+seat seat0 hide_cursor 3000
 
 include /etc/sway/config.d/*
