@@ -18,5 +18,6 @@ ln -svnf $DOT_DIR/.bashrc ~/.bashrc
 ln -svnf $DOT_DIR/.zshrc ~/.zshrc
 ln -svnf $DOT_DIR/.Xresources ~/.Xresources
 ln -svnf $DOT_DIR/.xinitrc ~/.xinitrc
+ln -svnf $DOT_DIR/sway ~/.config/
 
 echo "all set!"
