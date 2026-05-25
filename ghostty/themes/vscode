@@ -1,0 +1,55 @@
+# Ghostty colorscheme - based on VSCode Neovim theme
+# Add this to your ~/.config/ghostty/config
+
+# Dark variant (vim.o.background = 'dark')
+palette = 0=#1F1F1F
+palette = 1=#F44747
+palette = 2=#6A9955
+palette = 3=#D7BA7D
+palette = 4=#569CD6
+palette = 5=#C586C0
+palette = 6=#4EC9B0
+palette = 7=#D4D4D4
+palette = 8=#808080
+palette = 9=#F44747
+palette = 10=#6A9955
+palette = 11=#DCDCAA
+palette = 12=#9CDCFE
+palette = 13=#C586C0
+palette = 14=#4EC9B0
+palette = 15=#FFFFFF
+
+background = #1F1F1F
+foreground = #D4D4D4
+
+cursor-color = #D4D4D4
+cursor-text = #1F1F1F
+
+selection-background = #264F78
+selection-foreground = #D4D4D4
+
+# Uncomment for light variant (vim.o.background = 'light')
+# palette = 0=#FFFFFF
+# palette = 1=#FF0000
+# palette = 2=#008000
+# palette = 3=#795E26
+# palette = 4=#0000FF
+# palette = 5=#AF00DB
+# palette = 6=#16825D
+# palette = 7=#343434
+# palette = 8=#000000
+# palette = 9=#FF0000
+# palette = 10=#008000
+# palette = 11=#800000
+# palette = 12=#0451A5
+# palette = 13=#AF00DB
+# palette = 14=#16825D
+# palette = 15=#343434
+#
+# background = #FFFFFF
+# foreground = #343434
+# cursor-color = #343434
+# cursor-text = #FFFFFF
+# selection-background = #ADD6FF
+# selection-foreground = #343434
+# link-color = #0000FF

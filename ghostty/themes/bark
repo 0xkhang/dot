@@ -1,0 +1,50 @@
+# Ghostty theme file
+# Based on your Neovim mydump colorscheme
+
+palette = 0=#101010
+palette = 1=#ab4642
+palette = 2=#a1b56c
+palette = 3=#f7ca88
+palette = 4=#7cafc2
+palette = 5=#ba8baf
+palette = 6=#86c1b9
+palette = 7=#d0d0d0
+palette = 8=#505050
+palette = 9=#ab4642
+palette = 10=#a1b56c
+palette = 11=#f7ca88
+palette = 12=#7cafc2
+palette = 13=#ba8baf
+palette = 14=#86c1b9
+palette = 15=#fafafa
+
+background = #101010
+foreground = #d0d0d0
+
+cursor-color = #d0d0d0
+cursor-text = #101010
+
+selection-background = #2b2b2b
+selection-foreground = #d0d0d0
+
+# ANSI colors extracted from your theme
+# 0: Black (base00) - #101010
+# 1: Red (base08) - #ab4642
+# 2: Green (base0B) - #a1b56c
+# 3: Yellow (base09) - #f7ca88
+# 4: Blue (base0D) - #7cafc2
+# 5: Magenta (base0E) - #ba8baf
+# 6: Cyan (base0C) - #86c1b9
+# 7: White (base05) - #d0d0d0
+# 8: Bright Black (base03) - #505050
+# 9: Bright Red - #ab4642
+# 10: Bright Green - #a1b56c
+# 11: Bright Yellow - #f7ca88
+# 12: Bright Blue - #7cafc2
+# 13: Bright Magenta - #ba8baf
+# 14: Bright Cyan - #86c1b9
+# 15: Bright White - #fafafa
+
+# Special colors
+selection-background = #2b2b2b
+selection-foreground = #d0d0d0
