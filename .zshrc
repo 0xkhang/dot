@@ -43,12 +43,12 @@ alias lg="lazygit"
 alias open="xdg-open"
 
 # for x11 (redshift)
-# alias night="redshift -O 4500K"
-# alias day="redshift -x"
+alias night="redshift -O 4500K"
+alias day="redshift -x"
 
-# for wayland (gammastep)
-alias night="gammastep -O 4500K &"
-alias day="gammastep -x"
+# # for wayland (gammastep)
+# alias night="gammastep -O 4500K &"
+# alias day="gammastep -x"
 
 # Compilation flags
 export ARCHFLAGS="-arch $(uname -m)"
