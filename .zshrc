@@ -1,3 +1,6 @@
+# nvm
+source /usr/share/nvm/init-nvm.sh
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
@@ -12,7 +15,6 @@ set -o vi
 plugins=(git zsh-autosuggestions)
 
 source $ZSH/oh-my-zsh.sh
-
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -21,7 +23,7 @@ else
 fi
 
 
-PS1='[%n@%F{red}%m%f %1~]$ '
+PS1='%n@%F{white}%m%f %F{magenta}%1~%f $(git rev-parse --abbrev-ref HEAD 2>/dev/null | sed "s/.*/(&) /" | tr -d "\n")> '
 
 # Plugins
 plugins+=(git zsh-autosuggestions zsh-syntax-highlighting web-search tmux)
