@@ -15,8 +15,11 @@ return {
     "nvim-mini/mini.pick",           -- optional
     "folke/snacks.nvim",             -- optional
   },
-  cmd = "Neogit",
+  cmd = { "Neogit", "G" },
   keys = {
     { "<leader>gg", "<cmd>Neogit<cr>", desc = "Show Neogit UI" }
-  }
+  },
+  init = function()
+    vim.api.nvim_create_user_command("G", "Neogit", {})
+  end
 }
