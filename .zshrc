@@ -60,3 +60,13 @@ export PATH=/home/dexter/.opencode/bin:$PATH
 
 # go
 export PATH="$PATH:$HOME/go/bin"
+
+# Android
+export ANDROID_HOME=$HOME/Android/Sdk
+export ANDROID_AVD_HOME=$HOME/.config/.android/avd
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# Java
+export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+export PATH=$PATH:$JAVA_HOME/bin
