@@ -12,8 +12,6 @@ bindkey -v
 # ZSH_THEME="robbyrussell"
 set -o vi
 
-plugins=(git zsh-autosuggestions)
-
 source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
@@ -26,7 +24,7 @@ fi
 PS1='%n@%F{white}%m%f %F{magenta}%1~%f $(git rev-parse --abbrev-ref HEAD 2>/dev/null | sed "s/.*/(&) /" | tr -d "\n")> '
 
 # Plugins
-plugins+=(git zsh-autosuggestions zsh-syntax-highlighting web-search tmux)
+plugins+=(git zsh-syntax-highlighting web-search tmux)
 
 eval "$(fzf --zsh)"
 
@@ -44,6 +42,7 @@ alias of="onefetch"
 alias lg="lazygit"
 alias open="xdg-open"
 alias ta="tmux a"
+alias cd=z
 
 # for x11 (redshift)
 alias night="redshift -O 4500K"
@@ -75,3 +74,6 @@ export PATH=$PATH:$JAVA_HOME/bin
 
 # zoxide
 eval "$(zoxide init zsh)"
+
+# direnv
+eval "$(direnv hook zsh)"
