@@ -58,7 +58,7 @@ tiling_drag modifier titlebar
 
 # start a terminal
 bindsym $mod+Return exec kitty
-bindsym Print exec scrot
+bindsym Print exec scrot /home/nk/screenshots/%Y-%m-%d-%T-screenshot.png
 bindsym Mod1+space exec "rofi -modi drun, run -show drun"
 
 # kill focused window
