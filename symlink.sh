@@ -33,4 +33,6 @@ ln -svnf $DOT_DIR/.xinitrc ~/.xinitrc
 rm -rf ~/.config/sway
 ln -svnf $DOT_DIR/sway ~/.config/
 
+ln -svnf $DOT_DIR/flameshot ~/.config/
+
 echo "all set!"
