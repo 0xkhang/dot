@@ -43,10 +43,12 @@ alias ff="fastfetch"
 alias of="onefetch"
 alias lg="lazygit"
 alias open="xdg-open"
+alias ta="tmux a"
 
 # for x11 (redshift)
 alias night="redshift -O 4500K"
 alias day="redshift -x"
+alias scrot='scrot ~/screenshots/%b%d::%H%M%S.png'
 
 # # for wayland (gammastep)
 # alias night="gammastep -O 4500K &"
@@ -70,3 +72,6 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 # Java
 export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
 export PATH=$PATH:$JAVA_HOME/bin
+
+# zoxide
+eval "$(zoxide init zsh)"
