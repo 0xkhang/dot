@@ -35,4 +35,7 @@ ln -svnf $DOT_DIR/sway ~/.config/
 
 ln -svnf $DOT_DIR/flameshot ~/.config/
 
+rm -rf ~/.config/kitty
+ln -svnf $DOT_DIR/kitty ~/.config/
+
 echo "all set!"
