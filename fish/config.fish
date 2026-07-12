@@ -5,8 +5,8 @@ set fish_cursor_insert block
 set -x XDG_RUNTIME_DIR /run/user/(id -u)
 set -x MANPAGER "nvim +Man!"
 
-function fish_mode_prompt
-end
+# function fish_mode_prompt
+# end
 
 function fish_prompt 
     set_color green
