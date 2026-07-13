@@ -12,7 +12,10 @@ bindkey -v
 # ZSH_THEME="robbyrussell"
 set -o vi
 
+plugins=(git zsh-syntax-highlighting web-search tmux)
+
 source $ZSH/oh-my-zsh.sh
+
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
@@ -21,28 +24,29 @@ else
 fi
 
 
-PS1='%n@%F{white}%m%f %F{magenta}%1~%f $(git rev-parse --abbrev-ref HEAD 2>/dev/null | sed "s/.*/(&) /" | tr -d "\n")> '
+PS1='%n@%m %F{magenta}%1~%f $(git rev-parse --abbrev-ref HEAD 2>/dev/null | sed "s/.*/(&) /" | tr -d "\n")> '
 
-# Plugins
-plugins+=(git zsh-syntax-highlighting web-search tmux)
+# eval "$(starship init zsh)"
 
 eval "$(fzf --zsh)"
 
 export EDITOR="nvim"
 export MANPAGER="nvim +Man!"
 export XDG_CONFIG_HOME="$HOME/.config"
-export FIREFOX_DIR="$HOME/.mozilla/firefox/irfvjek3.default-default"
+export FIREFOX_DIR="$HOME/.config/mozilla/firefox/2ve6nf3j.default-release"
 
 alias ls="ls"
 alias ll='ls -l'
 alias nvi="nvim"
 alias f="ufetch"
+alias branch='git checkout $(git branch | fzf)'
 alias ff="fastfetch"
 alias of="onefetch"
 alias lg="lazygit"
 alias open="xdg-open"
 alias ta="tmux a"
 alias cd=z
+alias cat=bat
 
 # for x11 (redshift)
 alias night="redshift -O 4500K"
@@ -57,7 +61,7 @@ alias scrot='scrot ~/screenshots/%b%d::%H%M%S.png'
 export ARCHFLAGS="-arch $(uname -m)"
 
 # opencode
-export PATH=/home/dexter/.opencode/bin:$PATH
+export PATH=/home/nk/.opencode/bin:$PATH
 
 # go
 export PATH="$PATH:$HOME/go/bin"
@@ -77,3 +81,8 @@ eval "$(zoxide init zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
+
+zi() {
+  local dir
+  dir=$(zoxide query -l | fzf) && z "$dir"
+}
