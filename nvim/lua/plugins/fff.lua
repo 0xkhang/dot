@@ -6,6 +6,10 @@ return {
   end,
   -- for nixos:
   -- build = "nix run .#release",
+  config = function(_, opts)
+    vim.api.nvim_set_hl(0, 'FffNormal', { bg = 'NONE' })
+    require('fff').setup(opts)
+  end,
   opts = {
     debug = {
       enabled = false,
@@ -21,6 +25,9 @@ return {
     layout = {
       preview_position = 'right',
       preview_size = 0.55,
+    },
+    hl = {
+      normal = 'FffNormal',
     },
     preview = {
       enabled = true,
