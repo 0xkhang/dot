@@ -12,7 +12,7 @@ bindkey -v
 # ZSH_THEME="robbyrussell"
 set -o vi
 
-plugins=(git zsh-syntax-highlighting web-search tmux)
+plugins=(git web-search tmux)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -39,14 +39,14 @@ alias ls="ls"
 alias ll='ls -l'
 alias nvi="nvim"
 alias f="ufetch"
-alias branch='git checkout $(git branch | fzf)'
+alias gco='git checkout $(git branch | fzf)'
 alias ff="fastfetch"
 alias of="onefetch"
 alias lg="lazygit"
 alias open="xdg-open"
 alias ta="tmux a"
 alias cd=z
-alias cat=bat
+# alias cat=bat
 
 # for x11 (redshift)
 alias night="redshift -O 4500K"
@@ -86,3 +86,15 @@ zi() {
   local dir
   dir=$(zoxide query -l | fzf) && z "$dir"
 }
+
+# bun completions
+[ -s "/home/nk/.bun/_bun" ] && source "/home/nk/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+. "$HOME/.local/bin/env"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
