@@ -38,4 +38,7 @@ ln -svnf $DOT_DIR/flameshot ~/.config/
 rm -rf ~/.config/kitty
 ln -svnf $DOT_DIR/kitty ~/.config/
 
+rm -rf ~/.config/starship.toml
+ln -svnf $DOT_DIR/starship.toml ~/.config/starship.toml
+
 echo "all set!"
