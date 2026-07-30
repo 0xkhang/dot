@@ -15,12 +15,17 @@ set $mod Mod4
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:Iosevka Medium 11
+font pango:Iosevka Medium 12
 
 # Start XDG autostart .desktop files using dex. See also
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s noblank
 exec_always --no-startup-id unclutter
+exec_always --no-startup-id picome &
+exec_always --no-startup-id feh --bg-scale ~/wallpapers/vagabond.png
 exec_always --no-startup-id xinput set-prop 11 321 1
 # exec_always --no-startup-id xinput disable 11
 exec_always --no-startup-id "setxkbmap -option caps:escape"
