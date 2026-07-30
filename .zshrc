@@ -44,8 +44,9 @@ alias ff="fastfetch"
 alias of="onefetch"
 alias lg="lazygit"
 alias open="xdg-open"
-alias ta="tmux a"
+alias ta=tmux_on
 alias cd=z
+alias v=nvim
 # alias cat=bat
 
 # for x11 (redshift)
@@ -85,6 +86,14 @@ eval "$(direnv hook zsh)"
 zi() {
   local dir
   dir=$(zoxide query -l | fzf) && z "$dir"
+}
+
+tmux_on() {
+  if tmux a 2>/dev/null; then
+    :
+  else
+    tmux
+  fi
 }
 
 # bun completions
