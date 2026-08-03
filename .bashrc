@@ -27,3 +27,8 @@ alias day="redshift -x"
 alias code="dbus-launch flatpak run com.visualstudio.code"
 PS1='[\u@${RED}\h${RESET} \W]\$ '
 . "$HOME/.cargo/env"
+
+. "$HOME/.local/bin/env"
+
+# Generated for envman. Do not edit.
+[ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
