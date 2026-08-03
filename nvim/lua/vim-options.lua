@@ -1,9 +1,10 @@
 -- Indentation
 vim.opt.tabstop = 4
-vim.opt.expandtab = true
-vim.opt.softtabstop = 4
-vim.opt.shiftwidth = 4
-vim.o.nuw = 5
+vim.opt.expandtab = true vim.opt.softtabstop = 4 vim.opt.shiftwidth = 4 vim.o.nuw = 5
+-- Ensure termguicolors is enabled if not already
+vim.opt.termguicolors = true
+
+require('nvim-highlight-colors').setup({})
 
 local mode_map = {
   ["n"] = "N", ["i"] = "I", ["v"] = "V", ["V"] = "V", ["\22"] = "V",
@@ -74,3 +75,5 @@ vim.api.nvim_set_hl(0, "MatchParen", { link = "Normal" })  -- Make it invisible
 -- OR disable completely
 vim.o.showmatch = false
 vim.o.matchpairs = ""
+
+vim.opt.fillchars = { eob = " " }
