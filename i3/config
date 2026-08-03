@@ -26,14 +26,15 @@ exec --no-startup-id xset s noblank
 exec_always --no-startup-id unclutter
 exec_always --no-startup-id picome &
 exec_always --no-startup-id feh --bg-scale ~/wallpapers/vagabond.png
-exec_always --no-startup-id xinput set-prop 11 321 1
-# exec_always --no-startup-id xinput disable 11
+exec_always --no-startup-id xinput set-prop "Synaptics TM3471-020" "libinput Natural Scrolling Enabled" 1
+exec_always --no-startup-id xinput set-prop "Synaptics TM3471-020" "libinput Tapping Enabled" 1
+exec_always --no-startup-id xinput set-prop "Synaptics TM3471-020" "libinput Horizontal Scroll Enabled" 1
+# exec_always --no-startup-id xinput disable "Synaptics TM3471-020"
 exec_always --no-startup-id "setxkbmap -option caps:escape"
 exec_always --no-startup-id "picom &"
 exec_always --no-startup-id "feh --bg-scale ~/wallpapers/peace.png"
 exec_always --no-startup-id "xset r rate 150 30"
 exec_always --no-startup-id ~/.local/bin/mateview-dpi-watcher
-exec_always --no-startup-id "xinput set-prop 11 350 1"
 exec --no-startup-id killall xdg-desktop-portal-kde 2>/dev/null; true
 
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
