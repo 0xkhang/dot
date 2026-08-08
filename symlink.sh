@@ -41,4 +41,7 @@ ln -svnf $DOT_DIR/kitty ~/.config/
 rm -rf ~/.config/starship.toml
 ln -svnf $DOT_DIR/starship.toml ~/.config/starship.toml
 
+rm -rf ~/.gitconfig
+ln -svnf $DOT_DIR/.gitconfig ~/.gitconfig
+
 echo "all set!"
