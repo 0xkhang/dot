@@ -1,3 +1,31 @@
 [user]
 	name = Khang Le
-	email = lenguyenkhang102002@gmail.com
+	email = ngukhangle@gmail.com
+
+[alias]
+  co = checkout
+  st = status
+  rh = reset HEAD
+  rhh = reset --hard HEAD
+  pu = pull
+  up = push
+
+  l = "!. ~/.githelpers && pretty_git_log"
+  la = "!git l --all"
+  lr = "!git l -30"
+  lra = "!git lr --all"
+  lg = "!git l -G $1 -- $2"
+  feature = !sh -c 'git checkout --no-track -b $0 origin/main'
+
+[push]
+	default = current
+	followTags = true
+
+[remote]
+  pushDefault = origin
+
+[color]
+  diff = auto
+  status = auto
+  branch = auto
+	ui = true
