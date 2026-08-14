@@ -1,5 +1,5 @@
 # nvm
-source /usr/share/nvm/init-nvm.sh
+[ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && source "/opt/homebrew/opt/nvm/nvm.sh"
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
@@ -24,7 +24,7 @@ else
 fi
 
 
-PS1='%n@%m %F{magenta}%1~%f $(git rev-parse --abbrev-ref HEAD 2>/dev/null | sed "s/.*/(&) /" | tr -d "\n")> '
+PS1='%n@%m %F{magenta}%1~%f $(git rev-parse --abbrev-ref HEAD 2>/dev/null | sed "s/.*/(&) /" | tr -d "\n")'
 
 # eval "$(starship init zsh)"
 
@@ -36,14 +36,14 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export FIREFOX_DIR="$HOME/.config/mozilla/firefox/2ve6nf3j.default-release"
 
 alias ls="ls"
-alias ll='ls -l'
+alias ll='ls -lah'
 alias nvi="nvim"
-alias f="ufetch"
+alias f="~/ufetch-macos"
 alias gco='git checkout $(git branch | fzf)'
 alias ff="fastfetch"
 alias of="onefetch"
 alias lg="lazygit"
-alias open="xdg-open"
+# alias open="xdg-open"
 alias ta=tmux_on
 alias cd=z
 alias v=nvim
@@ -103,7 +103,8 @@ tmux_on() {
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-. "$HOME/.local/bin/env"
+# uv installer's env script (only exists if uv was installed via astral.sh installer)
+[ -s "$HOME/.local/bin/env" ] && . "$HOME/.local/bin/env"
 
 # Generated for envman. Do not edit.
 [ -s "$HOME/.config/envman/load.sh" ] && source "$HOME/.config/envman/load.sh"
