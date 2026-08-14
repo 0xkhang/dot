@@ -44,4 +44,7 @@ ln -svnf $DOT_DIR/starship.toml ~/.config/starship.toml
 rm -rf ~/.gitconfig
 ln -svnf $DOT_DIR/.gitconfig ~/.gitconfig
 
+rm -rf ~/.config/aerospace/aerospace.toml
+ln -svnf $DOT_DIR/aerospace/aerospace.toml ~/.config/aerospace/aerospace.toml
+
 echo "all set!"
