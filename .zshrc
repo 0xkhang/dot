@@ -19,8 +19,7 @@ source $ZSH/oh-my-zsh.sh
 # Preferred editor for local and remote sessions
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
-else
-  export EDITOR='nvim'
+else export EDITOR='nvim'
 fi
 
 
@@ -47,6 +46,7 @@ alias lg="lazygit"
 alias ta=tmux_on
 alias cd=z
 alias v=nvim
+alias python=python3
 # alias cat=bat
 
 # for x11 (redshift)
