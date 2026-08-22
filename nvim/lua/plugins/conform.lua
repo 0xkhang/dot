@@ -14,6 +14,7 @@ return {
 				c = { "clang_format" },
 				cpp = { "clang_format" },
 				go = { "gofumpt" },
+				python = { "black" },
 			},
 		})
 
