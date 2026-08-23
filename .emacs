@@ -1,5 +1,4 @@
-(setq evil-want-keybinding nil)   ; ← THIS IS REQUIRED
-(add-to-list 'ido-read-file-name-non-ido 'dired-create-directory)
+(setq evil-want-keybinding nil)
 
 ;; UI settings
 (tool-bar-mode -1)
@@ -9,7 +8,6 @@
 (show-paren-mode 1)
 (setq mac-command-modifier 'meta)
 (setq ns-use-proxy-icon nil)
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 (require 'package)
  
@@ -54,12 +52,9 @@
 (use-package magit
   :ensure t)
 
-;; Theme
-(load-theme 'gruber-darker t)
-
 ;; Line numbers
 (setq display-line-numbers-type 'relative)
-(global-display-line-numbers-mode 1)
+(global-display-line-numbers-mode -1)
 
 ;; Frame size
 (add-to-list 'default-frame-alist '(width . 100))
@@ -75,28 +70,23 @@
 (require 'ido)
 (ido-mode t)
 (ido-everywhere t)
-(setq ido-enable-flex-matching t) ; Enables flexible, fuzzy matching [2]
+(setq ido-enable-flex-matching t)
 
-
-(set-face-attribute 'mode-line nil :height 150)
-(set-face-attribute 'default nil :height 150)
+(setq make-backup-files nil)
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-enabled-themes '(gruber-darker))
  '(custom-safe-themes
-   '("e27c9668d7eddf75373fa6b07475ae2d6892185f07ebed037eedf783318761d7"
-     default))
- '(package-selected-packages
-   '(doom-modeline evil evil-collection gruber-darker-theme helm magit
-		   nyan-mode powerline use-package)))
+   '("3d5ef3d7ed58c9ad321f05360ad8a6b24585b9c49abcee67bdcbb0fe583a6950"
+     "b3775ba758e7d31f3bb849e7c9e48ff60929a792961a2d536edec8f68c671ca5"
+     "9b59e147dbbde5e638ea1cde5ec0a358d5f269d27bd2b893a0947c4a867e14c1"
+     "01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd"
+     default)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
-
-(setq make-backup-files nil)
+ '(default ((t (:background nil)))))
