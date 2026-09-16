@@ -23,7 +23,7 @@ else export EDITOR='nvim'
 fi
 
 
-PS1='[%n@%m %F{magenta}%1~%f] $(git rev-parse --abbrev-ref HEAD 2>/dev/null | sed "s/.*/(&) /" | tr -d "\n")'
+PS1='[%n@%F{red}%m%f %F{magenta}%1~%f] $(git rev-parse --abbrev-ref HEAD 2>/dev/null | sed "s/.*/(&) /" | tr -d "\n")' 
 
 # eval "$(starship init zsh)"
 
@@ -37,7 +37,7 @@ export FIREFOX_DIR="$HOME/.config/mozilla/firefox/2ve6nf3j.default-release"
 alias ls="ls"
 alias ll='ls -lah'
 alias nvi="nvim"
-alias f="~/ufetch-macos"
+alias f="ufetch"
 alias gco='git checkout $(git branch | fzf)'
 alias ff="fastfetch"
 alias of="onefetch"
@@ -116,6 +116,5 @@ export CPP_PATH="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include
 export DOOMDIR="$HOME/.config/emacs/bin"
 export PATH="$DOOMDIR:$PATH"
 
-
-export PATH="$PATH:$(brew --prefix)/opt/llvm/bin"
-export PATH="/opt/homebrew/opt/curl/bin:$PATH"
+# export PATH="$PATH:$(brew --prefix)/opt/llvm/bin"
+# export PATH="/opt/homebrew/opt/curl/bin:$PATH"
