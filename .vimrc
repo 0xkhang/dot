@@ -1,15 +1,17 @@
-set tabstop=4
+set tabstop=5
 set expandtab
 set softtabstop=4
 set shiftwidth=4
 set numberwidth=5
 
 set statusline="%t"
+set belloff=all
 
 set background=dark
+set noerrorbells
 
 " Clipboard
-set clipboard=unnamedplus
+set clipboard+=unnamedplus
 
 " Line numbers
 set number
@@ -48,9 +50,12 @@ let g:netrw_banner = 0
 let g:netrw_winsize = 25
 let g:mapleader = " "
 
+
 " Status bar
 set showtabline=0
 " set laststatus=0
+
+syntax on
 
 " here are some comments using vimscript
 
@@ -65,16 +70,24 @@ nohlsearch
 set noshowmatch
 set matchpairs=""
 
+noremap <leader>ef :Ex<CR>
+noremap <leader>sf :FZF<CR>
 noremap <leader>wv :vsplit<CR>
-
 noremap <C-h> <C-w>h
 noremap <C-j> <C-w>j
 noremap <C-k> <C-w>k
 noremap <C-l> <C-w>l
 
-noremap <leader>ef :Ex<CR>
-
 call plug#begin()
-" Plug 'morhetz/gruvbox'
-Plug 'tpope/vim-sensible'
+
+" List your plugins here
+Plug 'vim-airline/vim-airline'
+Plug 'morhetz/gruvbox'
+Plug 'junegunn/fzf'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+
 call plug#end()
+
+let g:gruvbox_termcolors = 16
+" colorscheme gruvbox
